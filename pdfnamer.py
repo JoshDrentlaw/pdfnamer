@@ -32,16 +32,16 @@ if __name__ == "__main__":
             if client != 'empty':
                 print('{}: {}'.format(idx, client))
         print("0: Exit")
-        client = int(input('Enter # '))
+        clientNum = int(input('Enter # '))
 
-        if client == 0:
+        if clientNum == 0:
             proceed = False
-        elif client <= 1:
-            client = clients[client]
-            clientFileName = trimmer.clientFileNamer(client)
-            trimmer.trimMethod(clientKey[client]['trim'], clientFileName[0])
+        elif clientNum >= 1:
+            clientName = clients[clientNum]
+            clientFileName = trimmer.clientFileNamer(clientName)
+            trimmer.trimMethod(clientKey[clientName]['trim'], clientFileName[0])
             plain = emailMessage()
-            emailClient(mailer, userName, client, clientFileName, plain)
+            emailClient(mailer, userName, clientName, clientNum, clientFileName, plain)
         else:
-            print("Please enter 1 or 2.")
+            print("Please enter a #.")
             print("Or press Ctrl-Z or 0, then Enter to exit.")

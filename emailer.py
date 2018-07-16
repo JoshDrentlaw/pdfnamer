@@ -19,7 +19,7 @@ def emailMessage():
     elif answer == "N" or "":
         return emailMessage()
 
-def emailClient(mailer, userName, client, clientFileName, plain=""):
+def emailClient(mailer, userName, clientName, clientNum, clientFileName, plain=""):
     """Email the new file to any client."""
     
     if plain == "":
@@ -28,8 +28,8 @@ def emailClient(mailer, userName, client, clientFileName, plain=""):
     mailer.start()
     message = Message(
         author=userName,
-        to=clientKey[client]['client'],
-        cc=emailKey[1],
+        to=clientKey[clientName]['client'],
+        cc=emailKey[clientNum],
         bcc=userName,
         subject=clientFileName[1],
         plain=plain

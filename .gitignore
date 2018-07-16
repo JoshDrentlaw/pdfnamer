@@ -1,0 +1,5 @@
+.vscode/
+smtptest.py
+key.py
+__pycache__/
+__init__.py
